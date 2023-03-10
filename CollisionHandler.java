@@ -1,11 +1,26 @@
 // CollisionHandler.java
 public abstract class CollisionHandler {
-    protected CollisionHandler nextHandler;
+    protected static CollisionHandler nextHandler;
 
-    public CollisionHandler setNextHandler(CollisionHandler nextHandler) {
-        this.nextHandler = nextHandler;
-        return nextHandler;
+    public CollisionHandler(CollisionHandler nextHandler) {
+        CollisionHandler.nextHandler = nextHandler;
     }
 
-    public abstract void handleCollision(Sprite s1, Sprite s2);
+    public static void handleCollision(Sprite sprites, Sprite sprites2) {
+    	System.out.println("enter this collision");
+    	if(match(sprites, sprites2)) {
+    		doHandler(sprites, sprites2);
+    	}else if(nextHandler != null) {
+    		CollisionHandler.handleCollision(sprites, sprites2);
+    	}
+    };
+    
+    protected static boolean match(Sprite s1, Sprite s2) {
+		// TODO Auto-generated method stub
+		return false;
+	}
+    protected static void doHandler(Sprite s1, Sprite s2) {
+		// TODO Auto-generated method stub
+		
+	}
 }

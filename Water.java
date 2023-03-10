@@ -1,9 +1,8 @@
 
 public class Water extends Sprite {
-	public Water(int position) {
-		this.position = position;
+	public Water() {
 		this.HP = 0;
-		this.symbol = 'W';
+		this.symbol = "W";
 	}
 
 	public void move(int position) {

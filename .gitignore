@@ -5,3 +5,6 @@
 /Sprite.class
 /Water.class
 /World.class
+/WaterFireHandler.class
+/HeroFireHandler.class
+/HeroWaterHandler.class

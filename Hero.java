@@ -1,9 +1,8 @@
 
 public class Hero extends Sprite {
-	public Hero(int position) {
-		this.position = position;
+	public Hero() {
 		this.HP = 30;
-		this.symbol = 'H';
+		this.symbol = "H";
 	}
 
 	public void move(int position) {

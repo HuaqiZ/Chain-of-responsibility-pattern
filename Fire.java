@@ -1,9 +1,8 @@
 
 public class Fire extends Sprite {
-	public Fire(int position) {
-		this.position = position;
+	public Fire() {
 		this.HP = 0;
-		this.symbol = 'F';
+		this.symbol = "F";
 	}
 
 	public void move(int position) {

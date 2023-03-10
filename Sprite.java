@@ -1,8 +1,7 @@
 // Sprite.java
 public abstract class Sprite {
-	protected int position; // 坐标位置
 	protected int HP; // 生命值
-	protected char symbol; // 生命种类
+	protected String symbol; // 生命种类
 
 	public abstract void move(int newPosition); // 移动方法
 
