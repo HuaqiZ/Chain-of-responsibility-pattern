@@ -1,16 +1,22 @@
 // Sprite.java
 public abstract class Sprite {
-	protected int HP; // 生命值
-	protected String symbol; // 生命种类
+	protected int HP;
+	protected String symbol;
+	protected int position;
 
-	public abstract void move(int newPosition); // 移动方法
-
-	// Getter 和 Setter 方法省略
-	public void getHP(int hp) {
-		this.HP = hp;
+	public int getHP() {
+		return HP;
 	}
 
 	public void setHP(int hp) {
-		this.HP = hp;
+		if(hp > 50) {
+			System.out.println("Max HP is 50");
+		}else {
+			this.HP = hp;
+		}
+	}
+	
+	public void setPostion(int position) {
+		this.position = position;
 	}
 }

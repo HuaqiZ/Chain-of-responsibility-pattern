@@ -1,26 +1,20 @@
-// CollisionHandler.java
 public abstract class CollisionHandler {
-    protected static CollisionHandler nextHandler;
+    protected CollisionHandler nextHandler;
 
     public CollisionHandler(CollisionHandler nextHandler) {
-        CollisionHandler.nextHandler = nextHandler;
+        this.nextHandler = nextHandler;
     }
 
-    public static void handleCollision(Sprite sprites, Sprite sprites2) {
-    	System.out.println("enter this collision");
-    	if(match(sprites, sprites2)) {
+    public void handleCollision(Sprite sprites, Sprite sprites2) {
+    	if(sprites.symbol == sprites2.symbol) {
+    		System.out.println("move fail, same type");
+    	}else if(match(sprites, sprites2)) {
     		doHandler(sprites, sprites2);
     	}else if(nextHandler != null) {
-    		CollisionHandler.handleCollision(sprites, sprites2);
+    		nextHandler.handleCollision(sprites, sprites2);
     	}
     };
     
-    protected static boolean match(Sprite s1, Sprite s2) {
-		// TODO Auto-generated method stub
-		return false;
-	}
-    protected static void doHandler(Sprite s1, Sprite s2) {
-		// TODO Auto-generated method stub
-		
-	}
+    protected abstract boolean match(Sprite s1, Sprite s2);
+    protected abstract void doHandler(Sprite s1, Sprite s2);
 }
